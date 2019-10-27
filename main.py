@@ -18,10 +18,12 @@ class Game:
         #pg.key.set_repeat(500,100)
 
     def load_data(self):
+        #loading data from map
         self.map_data = load_data(self)
         #print(self.map_data)
 
     def update_data(self,piece):
+        #update data locations
         data = self.map_data[self.pointer.row][self.pointer.col]
         prev_data = self.map_data[self.pointer.prev_row][self.pointer.prev_col]
         prev_data['occupied'] = False
@@ -34,7 +36,7 @@ class Game:
         data['army'] = piece.army
 
     def new(self):
-        # statrt new game
+        # start new game
         self.movable_list = []
         self.turn = 'WHITE'
         self.pointer = Pointer(self,4,4)
@@ -43,6 +45,7 @@ class Game:
         self.playing = True
 
     def draw_grid(self):
+        #draw grid on the screen
         for r in range(0,GRID_WIDTH):
             for c in range(0,GRID_HEIGHT):
                 col = WHITE if (r+c)%2 == 0 else GREY
