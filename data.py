@@ -1,5 +1,6 @@
 from os import path
 import pygame as pg
+from settings import WHITE
 from sprites import King, Queen , Bishop, Knight, Rook, Pawn
 
 
@@ -24,14 +25,14 @@ def load_data(game):
 
     for pair in ARMY:
         image = 'chess_piece_2_black_'+pair[2]
-        img = pg.image.load(path.join(img_folder,image)).convert()
+        img = pg.image.load(path.join(img_folder,image)).convert_alpha()
         data = a[0][pair[0]-1]
         data['occupied'] = True
         data['occupied_by'] = pair[1](game,0,pair[0]-1,img,"BLACK")
         data['army'] = 'BLACK'
 
     image = 'chess_piece_2_black_pawn.png'
-    img = pg.image.load(path.join(img_folder,image)).convert()
+    img = pg.image.load(path.join(img_folder,image)).convert_alpha()
     for c in range(8):
         data = a[1][c]
         data['occupied'] = True
@@ -39,7 +40,7 @@ def load_data(game):
         data['army'] = 'BLACK'
 
     image = 'chess_piece_2_white_pawn.png'
-    img = pg.image.load(path.join(img_folder,image)).convert()
+    img = pg.image.load(path.join(img_folder,image)).convert_alpha()
     for c in range(8):
         data = a[6][c]
         data['occupied'] = True
@@ -49,7 +50,7 @@ def load_data(game):
 
     for pair in ARMY:
         image = 'chess_piece_2_white_'+pair[2]
-        img = pg.image.load(path.join(img_folder,image)).convert()
+        img = pg.image.load(path.join(img_folder,image)).convert_alpha()
         data = a[7][pair[0]-1]
         data['occupied'] = True
         data['occupied_by'] = pair[1](game,7,pair[0]-1,img,"WHITE")

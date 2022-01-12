@@ -83,7 +83,7 @@ class Game:
         self.draw_movable()
         self.all_sprites.draw(self.screen)
         self.pointer.draw_selected()
-        text_to_screen(self.screen,"Made By AMIT UMRAO",RED,25,WIDTH/2,HEIGHT-20)
+        text_to_screen(self.screen,"Credits : umrao-ak47",RED,25,WIDTH/2,HEIGHT-20)
         text_to_screen(self.screen,"Turn : "+self.turn,YELLOW,20,WIDTH/2,HEIGHT-40)
         pg.display.flip()
 

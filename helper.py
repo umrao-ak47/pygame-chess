@@ -3,7 +3,7 @@ import pygame as pg
 
 
 def text_to_screen(screen,text,col,size,x,y):
-    font = pg.font.SysFont('arial',size)
+    font = pg.font.SysFont(pg.font.get_default_font() ,size)
     text_surface = font.render(text,True,col)
     text_rect = text_surface.get_rect()
     text_rect.center = (x,y)
